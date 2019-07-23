@@ -2,29 +2,14 @@ package hbcu.stay.ready.scientificcalculator;
 
 public class ScientificFeatures {
     Display display = new Display();
-    String[] displayModeList = {"binary", "octal", "decimal", "hexadecimal"};
-    String displayMode = "Degrees";
-    String unitMode = "Radians";
+    private double memory;
 
-    public void setDisplayMode() {
-        int x = 0;
-        if(x == 4) {
-            x++;
-        }
-        displayMode = displayModeList[x];
+    public ScientificFeatures() {
+        memory = 0;
     }
 
-    public void switchDisplayMode(String mode) {
-        displayMode = mode;
-    }
-
-    public void setDisplayUnitMode() {
-        if(unitMode == "Degrees") {
-            unitMode = "Degrees";
-        }
-        else {
-            unitMode = "Radians";
-        }
+    public ScientificFeatures(double memory) {
+        this.memory = memory;
     }
 
     public double sine(double x) {
@@ -74,5 +59,19 @@ public class ScientificFeatures {
             result *= factor;
         }
         return result;
+    }
+
+    public double resetMemory() {
+        memory = 0.0;
+        return memory;
+    }
+
+    public double addMemory(double x) {
+        memory += x;
+        return memory;
+    }
+
+    public double returnMemory(double x) {
+        return memory;
     }
 }

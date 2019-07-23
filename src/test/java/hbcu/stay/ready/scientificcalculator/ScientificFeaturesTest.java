@@ -103,4 +103,31 @@ public class ScientificFeaturesTest {
 
         Assert.assertEquals(expected, actual, 0.1);
     }
+
+    @Test
+    public void addMemoryTest() {
+        ScientificFeatures science = new ScientificFeatures(50.0);
+        double actual = science.addMemory(5);
+        double expected = 55;
+
+        Assert.assertEquals(expected, actual, 0.1);
+    }
+
+    @Test
+    public void resetMemory() {
+        ScientificFeatures science = new ScientificFeatures(5);
+        double actual = science.resetMemory();
+        double expected = 0;
+
+        Assert.assertEquals(expected, actual, 0.1);
+    }
+
+    @Test
+    public void returnMemory() {
+        ScientificFeatures science = new ScientificFeatures(7);
+        double actual = science.returnMemory(7);
+        double expected = 7;
+
+        Assert.assertEquals(expected, actual, 0.1);
+    }
 }

@@ -32,13 +32,10 @@ public class CalculatorTest {
         Assert.assertEquals(expected, actual, 0);
     }
 
-    @Test
+    @Test(expected = ArithmeticException.class)
     public void divideTest() {
         Calculator calculator = new Calculator(10);
-        double actual = calculator.divide(2);
-        double expected = 5;
-
-        Assert.assertEquals(expected, actual, 0);
+        calculator.divide(0);
     }
 
     @Test

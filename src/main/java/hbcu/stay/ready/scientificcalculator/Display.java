@@ -3,17 +3,29 @@ package hbcu.stay.ready.scientificcalculator;
 import java.awt.*;
 
 public class Display {
-    private double currentNumber = 0.0;
+    private String[] displayModeList = {"binary", "octal", "decimal", "hexadecimal"};
+    private String[] radiansModeList =  {"Degrees", "Radians"};
+    int i = 0;
 
-    public double getCurrentNumber() {
-        return currentNumber;
+    public String switchDisplayMode() {
+        i++;
+        if (i == 4) {
+            i = 0;
+        }
+        return displayModeList[i];
     }
-    public void setCurrentNumber(double number) {
-        currentNumber = number;
+
+
+    public String[] switchRadians = {"Degrees", "Radians"};
+
+    public String switchRadiansMode() {
+        i++;
+        if (i == 2) {
+            i = 0;
+        }
+        return switchRadians[i];
     }
-    public void clear() {
-        currentNumber = 0;
-    }
+
 
 
 }

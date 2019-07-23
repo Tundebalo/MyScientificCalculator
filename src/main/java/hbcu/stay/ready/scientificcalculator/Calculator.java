@@ -31,13 +31,9 @@ public class Calculator {
         return memory;
     }
 
-    public double divide(double x) {
+    public double divide(double x) throws ArithmeticException {
+        if(x == 0) throw new ArithmeticException();
         memory /= x;
-        try {
-            display.setCurrentNumber(memory / x);
-        } catch (Exception e) {
-            System.out.println("Error");
-        }
         return memory;
     }
 
@@ -67,5 +63,7 @@ public class Calculator {
         }
         return memory;
     }
+
+
 }
 
